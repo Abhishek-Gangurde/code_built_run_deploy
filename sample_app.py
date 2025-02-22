@@ -26,7 +26,7 @@ if __name__=="__main__":
         tkr = yf.Ticker(stock_selected)
         df = tkr.history(period="1mo")
     except Exception as e:
-        st.markdown(e)
+        st.error(e)
         st.stop()
 
     df.reset_index(inplace=True)
