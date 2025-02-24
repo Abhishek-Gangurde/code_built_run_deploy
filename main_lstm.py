@@ -11,6 +11,7 @@ def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM"):
     # df =  yf.download(stock, start, end)
     data = tkr.history(period=data_duration)
     data = pd.DataFrame(data)
+    data = data.replace(",","")
 
     # data.head()
 
