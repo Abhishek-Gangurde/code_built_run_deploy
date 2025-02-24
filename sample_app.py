@@ -57,18 +57,26 @@ if __name__=="__main__":
 
     selected_epoch=st.slider("Optimal the epoch higher the accuracy:", 80, 150, 100)
     st.write("Hold tight we are gonna predict the tommorows ticker price")
-
+    def MAE(mae):
+        mae=int(mae)
+        if mae>=0 and mae<=1:
+            st.write("Low MAE(~0 to 1): Excellent prediction, close to actual prices.")
+        elif mae>=1 and mae <=5:
+            st.write("Moderate MAE (~1 to 5): Decent performance but can be improved.")
+        elif mae>5
+            st.write("High MAE (>5): Poor prediction, indicating high error.")
+        else:
+            pass
+    
     predict_using_lstm , predict_using_gru = st.columns(2)
     if predict_using_lstm.button("LSTM",type='primary'):
         st.write("Predicted Using LSTM")
-        final_accuracy, tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="LSTM") 
+        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="LSTM") 
         st.dataframe(tomorrow_prediction_df)
-        st.write(f"Prediction Accuracy Using LSTM: {int(final_accuracy*100)}%")
-        st.write(print(model_summary))
+        MAE(mae)
     if predict_using_gru.button("LSTM-GRU",type='primary'):
         st.write("Predicted Using GRU")
-        final_accuracy, tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="GRU") 
+        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="GRU") 
         st.dataframe(tomorrow_prediction_df)
-        st.write(f"Prediction Accuracy Using GRU: {int(final_accuracy*100)}%")
-        st.write(print(model_summary))
+        MAE(mae)
 
