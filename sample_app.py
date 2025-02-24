@@ -3,6 +3,9 @@ from main_lstm import *
 # App Title
 
 if __name__=="__main__":
+
+    st.set_page_config(page_title="Stock Chronos", page_icon="📈")
+
     st.title("📈 Stock Chronos: Time Series Forecasting")
 
 
