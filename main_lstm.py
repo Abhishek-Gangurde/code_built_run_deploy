@@ -100,8 +100,8 @@ def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM"):
 
     # print(f"Test Loss: {loss}")
     # print(f"Test MAE: {mae}")
-    # print(f"Test Accuracy: {accuracy}")
+    # print(f"Test Accuracy: {1-mae}")
 
-    final_accuracy = accuracy
+    final_accuracy = 1-mae
 
     return final_accuracy, tomorrow_prediction_df, model_summary
