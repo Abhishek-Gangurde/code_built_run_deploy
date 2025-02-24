@@ -96,7 +96,7 @@ def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM"):
 
     tomorrow_prediction_df=next_day_prediction(model=model,scaler=Ms,data=data)
     # Evaluate the model
-    loss, mae, accuracy = model.evaluate(test_seq, test_label)
+    loss, mae = model.evaluate(test_seq, test_label)
 
     # print(f"Test Loss: {loss}")
     # print(f"Test MAE: {mae}")
