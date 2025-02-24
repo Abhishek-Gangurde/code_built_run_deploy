@@ -63,7 +63,7 @@ if __name__=="__main__":
             st.write("Low MAE(~0 to 1): Excellent prediction, close to actual prices.")
         elif mae>=1 and mae <=5:
             st.write("Moderate MAE (~1 to 5): Decent performance but can be improved.")
-        elif mae>5
+        elif mae>5:
             st.write("High MAE (>5): Poor prediction, indicating high error.")
         else:
             pass
