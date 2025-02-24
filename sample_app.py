@@ -36,7 +36,7 @@ if __name__=="__main__":
     df["Date"]=pd.to_datetime(df["Date"]).dt.date
     # Display Stock Data
     st.write("### 📊 Stock Data Preview")
-    st.dataframe(df.tail())
+    st.dataframe(df.tail(),use_container_width=True)
 
     # Plot Closing Price
     st.write("### 📈 Stock Closing Price Over Time")
