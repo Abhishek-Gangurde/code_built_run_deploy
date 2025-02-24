@@ -16,7 +16,7 @@ if __name__=="__main__":
     # tickers_df = pd.read_csv(nse_url)
     # Extract the tickers
     # tickers = tickers_df['SYMBOL'].tolist()   #This will contain the list of stocks ticker in the for of list
-    tickers=["IOC.BO","GOOG","CDSL.NS"]
+    tickers=["IOC.BO","GOOG","CDSL.NS","^NSEI","^NSEBANK"]
     choosed_ticker_option = st.selectbox(
         "TickerName / Stock Name (e.g : AAPL)",
         tuple(tickers),
