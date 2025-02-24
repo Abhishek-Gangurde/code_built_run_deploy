@@ -55,7 +55,7 @@ if __name__=="__main__":
     st.write(f"Would you like to predict the tommorows mkt price of {stock_selected}?")
 
 
-    selected_epoch=st.slider("Optimal the epoch higher the accuracy:", 10, 150, 10)
+    selected_epoch=st.slider("Optimal the epoch higher the accuracy:", 80, 150, 100)
     st.write("Hold tight we are gonna predict the tommorows ticker price")
 
     predict_using_lstm , predict_using_gru = st.columns(2)
