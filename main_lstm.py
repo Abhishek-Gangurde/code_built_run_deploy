@@ -76,7 +76,7 @@ def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM", data_history=
     if MODAL=="GRU":
         model = Sequential()
         model.add(LSTM(units=50, return_sequences=True, input_shape = (train_seq.shape[1], train_seq.shape[2])))
-        model.add(Dropout(0.1))
+        model.add(Dropout(0.2))
         model.add(GRU(units=50))
         model.add(Dense(5,activation='linear'))
         model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_error'])
@@ -86,7 +86,7 @@ def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM", data_history=
     else:
         model = Sequential()
         model.add(LSTM(units=50, return_sequences=True, input_shape = (train_seq.shape[1], train_seq.shape[2])))
-        model.add(Dropout(0.1))
+        model.add(Dropout(0.2))
         model.add(LSTM(units=50))
         model.add(Dense(5,activation='linear'))
         model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_error'])
