@@ -54,6 +54,7 @@ if __name__=="__main__":
     st.write("#### 📊 Tommorows Forecasting Using LSTM")
     st.write(f"Would you like to predict the tommorows mkt price of {stock_selected}?")
 
+    data_duration = st.slider(f"Select a duration (yr) on which you would like your model to predict",1,10,4)
 
     selected_epoch=st.slider("Optimal the epoch higher the accuracy:", 80, 150, 100)
     st.write("Hold tight we are gonna predict the tommorows ticker price")
@@ -74,12 +75,12 @@ if __name__=="__main__":
     predict_using_lstm , predict_using_gru = st.columns(2)
     if predict_using_lstm.button("LSTM",type='primary'):
         st.write("Predicted Using LSTM")
-        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="LSTM") 
+        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="LSTM",data_history=data_duration) 
         st.dataframe(tomorrow_prediction_df)
         MAE(mae)
     if predict_using_gru.button("LSTM-GRU",type='primary'):
         st.write("Predicted Using GRU")
-        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="GRU") 
+        mae , tomorrow_prediction_df, model_summary = model_training(stock_symbol=stock_selected,epochs=selected_epoch,MODAL="GRU",data_history=data_duration) 
         st.dataframe(tomorrow_prediction_df)
         MAE(mae)
 
