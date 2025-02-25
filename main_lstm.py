@@ -1,7 +1,7 @@
 from import_libraries import * 
 
 #Taking Ticker from user 
-def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM", data_history=4y):
+def model_training(stock_symbol="IOC.BO", epochs=10, MODAL="LSTM", data_history="4y"):
 
     # data_duration='4y'
     test_split_data=0.3
