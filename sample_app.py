@@ -55,6 +55,7 @@ if __name__=="__main__":
     st.write(f"Would you like to predict the tommorows mkt price of {stock_selected}?")
 
     data_duration = st.slider(f"Select a duration (yr) on which you would like your model to predict",1,10,4)
+    data_duration = f"{data_duration}y"
 
     selected_epoch=st.slider("Optimal the epoch higher the accuracy:", 80, 150, 100)
     st.write("Hold tight we are gonna predict the tommorows ticker price")
